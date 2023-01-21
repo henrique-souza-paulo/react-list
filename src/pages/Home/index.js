@@ -3,6 +3,7 @@ import MyHeader from "../../components/MyHeader"
 import Grid from '@mui/material/Grid'
 import { Card, CardMedia, CardContent } from '@mui/material';
 import ControlledAccordions from "../../components/AcordeonDeuses";
+import ResponsiveDialog from "../../components/ResponsiveDialog/responsiveDialog";
 
 // importação das imagens
 import ANoiteEstrelada from '../../../src/images/a-noite-estrelada.jpg'
@@ -15,7 +16,7 @@ export default function Home(){
         <div className ="app">
             <MyHeader />
 
-            <Grid container direction="column" alignItems="center" justify="center">
+            <Grid container direction="column" alignItems="center" justify="center" mb={5}>
                 <h1>Museu de artes</h1>
 
                 <Card raised={true} sx={{maxWidth: 900}}>
@@ -27,6 +28,7 @@ export default function Home(){
                     <CardContent sx={{ bgcolor: "#E8E8E8" }}>
                         <h3>A Noite Estrelada</h3>
                         <span>
+                            
                             O quadro <b>A Noite Estrelada</b>, de <b>Vincent van Gogh</b>, foi pintado em 1889.
                             É um óleo sobre tela, com 74 cm X 92 cm, e se encontra no Museu de Arte 
                             Moderna de Nova York (MoMA).
@@ -65,7 +67,7 @@ export default function Home(){
                         image={PanteaoGrego}
                         alt="panteao grego"/>
                     <CardContent sx={{ bgcolor: "#E8E8E8" }}>
-                        <h2>Panteão Grego</h2>
+                        <ResponsiveDialog />
                         <span>
                             Embora a mitologia grega não represente adequadamente uma religião, ela se baseia 
                             em uma coleção de mitos e contos dos antigos gregos, que conta como teria sido a 

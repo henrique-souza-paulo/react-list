@@ -5,6 +5,7 @@ import Listadois from './pages/SegundaLista';
 import Listatres from './pages/TerceiraLista';
 import Listaquatro from './pages/QuartaLista';
 import Listacinco from './pages/QuintaLista';
+import Pessoal from './pages/bestfriends';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='terceiralista' element={<Listatres />} />
         <Route path='quartalista' element={<Listaquatro />} />
         <Route path='quintalista' element={<Listacinco />} />
+        <Route path='issoepessoal' element={<Pessoal />} />
       </Routes>
     </Router>
 

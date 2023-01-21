@@ -11,6 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Icon } from '@iconify/react';
+import ImageUsuario from '../../images/userimg.jpeg'
 
 import { Link } from "react-router-dom";
 
@@ -70,20 +72,27 @@ const menuItens = [
 
 const settings = [
   {
-    to: 'https://www.instagram.com/henri_santosz021/',
-    name: 'Profile'
+    href: 'https://www.instagram.com/henri_santosz021/',
+    name: 'Instagram',
+    icon: 'mdi:instagram',
+    alvo: '"_blank"'
   },
   {
-    to: '/primeiralista',
-    name: 'Account'
+    href: 'https://www.linkedin.com/in/paulo-souza-82a123248/',
+    name: 'LinkedIn',
+    icon: 'mdi:linkedin',
+    alvo: '"_blank"'
   },
   {
-    to: '/segundalista',
-    name: 'Dashboard'
+    href: 'https://github.com/henrique-souza-paulo',
+    name: 'GitHub',
+    icon: 'mdi:github',
+    alvo: '"_blank"'
   },
   {
-    to: '/terceiralista',
+    href: 'https://www.google.com',
     name: 'Logout'
+  
   }
 ];
 
@@ -164,9 +173,9 @@ function MyHeader() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Mais informações">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar>H</Avatar>
+                <Avatar alt="Remy Sharp" src={ImageUsuario} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -187,9 +196,10 @@ function MyHeader() {
             >
               {settings.map((setting, index) => (
                 <MenuItem key={index} onClick={handleCloseUserMenu}>
-                  <Link to={setting.to} style={{ textDecoration: 'none' }}>
-                    <Typography textAlign="center">{setting.name}</Typography>
-                  </Link>
+                  <a href={setting.href} style={{ textDecoration: 'none' }} target={setting.alvo}>
+                    <Typography textAlign="center">{setting.name}
+                    <Icon icon={setting.icon} /></Typography>
+                  </a>
                 </MenuItem>
               ))}
 
