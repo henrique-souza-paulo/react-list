@@ -12,7 +12,7 @@ function App() {
     // Rotas
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='primeiralista' element={<Listaum />} />
         <Route path='segundalista' element={<Listadois />} />
         <Route path='terceiralista' element={<Listatres />} />
