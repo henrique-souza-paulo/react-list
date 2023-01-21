@@ -16,7 +16,7 @@ export default function Home(){
             <MyHeader />
 
             <Grid container direction="column" alignItems="center" justify="center">
-                <h1>Informações</h1>
+                <h1>Museu de artes</h1>
 
                 <Card raised={true} sx={{maxWidth: 900}}>
                     <CardMedia
