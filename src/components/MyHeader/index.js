@@ -70,7 +70,7 @@ const menuItens = [
 
 const settings = [
   {
-    to: '/',
+    to: 'https://www.instagram.com/henri_santosz021/',
     name: 'Profile'
   },
   {
