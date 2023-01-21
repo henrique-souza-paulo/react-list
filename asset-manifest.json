@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/react-list/static/js/main.849fbc6e.js",
+    "static/media/a-noite-estrelada.jpg": "/react-list/static/media/a-noite-estrelada.e02321f748998a5c0d0b.jpg",
+    "static/media/numero1.jpeg": "/react-list/static/media/numero1.1e239616e345f356b64b.jpeg",
+    "static/media/numero2.jpeg": "/react-list/static/media/numero2.1a4708795d78b4417b45.jpeg",
+    "static/media/campo-de-trigo-com-corvos.jpg": "/react-list/static/media/campo-de-trigo-com-corvos.ac459f60d431e3692b75.jpg",
+    "static/media/panteao-grego.jpg": "/react-list/static/media/panteao-grego.d35b6f454de53ff733ed.jpg",
+    "index.html": "/react-list/index.html",
+    "main.849fbc6e.js.map": "/react-list/static/js/main.849fbc6e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.849fbc6e.js"
+  ]
+}
