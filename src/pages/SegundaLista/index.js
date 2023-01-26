@@ -1,5 +1,4 @@
 import React from 'react';
-import MyHeader from "../../components/MyHeader"
 
 import Numero2 from '../../images/umbrella/numero2.jpeg'
 import Grid from '@mui/material/Grid'
@@ -14,27 +13,24 @@ import ExercicioSete from './exercicios/ExercicioSete';
 import ExercicioOito from './exercicios/ExercicioOito';
 import ExercicioNove from './exercicios/ExercicioNove';
 
-function Listadois(){
-    return(
-        <div className ="app">
-            <MyHeader />
+function Listadois() {
+	return (
+		<div className="app">
+			<Grid container direction="column" alignItems="center" justify="center">
+				<img src={Numero2} alt='Numero 2' width="25%" style={{ marginTop: 30 }}></img>
+			</Grid>
 
-            <Grid container direction="column" alignItems="center" justify="center">
-                <img src={Numero2} alt='Numero 2' width="25%" style={{marginTop:30}}></img>
-            </Grid>
-            
-            <ExercicioUm        />
-            <ExercicioDois      />
-            <ExercicioTres      />
-            <ExercicioQuatro    />
-            <ExercicioCinco     /> 
-            <ExercicioSeis      />
-            <ExercicioSete      />
-            <ExercicioOito      />
-            <ExercicioNove      />
-
-        </div>
-    )
+			<ExercicioUm />
+			<ExercicioDois />
+			<ExercicioTres />
+			<ExercicioQuatro />
+			<ExercicioCinco />
+			<ExercicioSeis />
+			<ExercicioSete />
+			<ExercicioOito />
+			<ExercicioNove />
+		</div>
+	)
 }
 
 export default Listadois

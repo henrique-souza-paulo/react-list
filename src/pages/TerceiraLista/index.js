@@ -1,10 +1,8 @@
-import MyHeader from "../../components/MyHeader"
 
-function Listatres(){
-    return(
-        <div className ="app">
-            <MyHeader />
 
+function Listatres() {
+    return (
+        <div className="app">
             <h1>EM PRODUÇÃO... AGUARDE ATUALIZAÇÕES</h1>
         </div>
     )

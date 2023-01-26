@@ -8,9 +8,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default function ResponsiveDialog() {
+export default function ResDialog() {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -22,6 +22,8 @@ export default function ResponsiveDialog() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -43,9 +45,7 @@ export default function ResponsiveDialog() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-            <Link to="issoepessoal" style={{ textDecoration: 'none' }}>
-                <Button variant="text">clique-me</Button>
-            </Link>
+          <Button variant="text" onClick={() => navigate('/issoepessoal')}>clique-me</Button>
         </DialogActions>
       </Dialog>
     </div>

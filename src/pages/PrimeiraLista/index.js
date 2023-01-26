@@ -1,7 +1,5 @@
 import React from 'react';
 
-import MyHeader from "../../components/MyHeader"
-
 import Numero1 from '../../images/umbrella/numero1.jpeg'
 import Grid from '@mui/material/Grid'
 
@@ -20,8 +18,6 @@ function Listaum(){
 
     return(
         <div className ="app">
-            <MyHeader />
-
             <Grid container direction="column" alignItems="center" justify="center">
                 <img src={Numero1} width="25%" alt='Numero 1' style={{marginTop:30}}></img>
             </Grid>
@@ -35,7 +31,6 @@ function Listaum(){
             <ExercicioOito />
             <ExercicioNove />
             <ExercicioDez />
-
         </div>
     )
 }
