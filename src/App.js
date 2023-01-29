@@ -13,7 +13,7 @@ function App() {
 
 			<Routes />
 
-            <Footer title="Project List" description="Desenvolvendo oportunidades!"/>
+			<Footer />
 		</BrowserRouter>
 
 	);

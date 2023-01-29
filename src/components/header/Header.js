@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Icon } from '@iconify/react';
-import ImageUsuario from '../../images/userimg.jpeg'
+
+import images from '../../images/images';
 
 import { Link } from "react-router-dom";
 
@@ -96,130 +97,73 @@ const listas = [
 ]
 
 export default function Header() {
+	//Menu de Nav
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
+	const handleOpenNavMenu = (event) => { setAnchorElNav(event.currentTarget); };
+	const handleCloseNavMenu = () => { setAnchorElNav(null); };
+
+	//Menu de Usuario
 	const [anchorElUser, setAnchorElUser] = React.useState(null);
+	const handleOpenUserMenu = (event) => { setAnchorElUser(event.currentTarget); };
+	const handleCloseUserMenu = () => { setAnchorElUser(null); };
+
+	//Menu de lista
 	const [anchorElList, setAnchorElList] = React.useState(null);
-
-	const handleOpenNavMenu = (event) => {
-		setAnchorElNav(event.currentTarget);
-	};
-	const handleOpenUserMenu = (event) => {
-		setAnchorElUser(event.currentTarget);
-	};
-
-	const handleCloseNavMenu = () => {
-		setAnchorElNav(null);
-	};
-
-	const handleCloseUserMenu = () => {
-		setAnchorElUser(null);
-
-	};
-
-	//menu de lista
-	const handleOpenListMenu = (event) => {
-		setAnchorElList(event.currentTarget);
-	}
-	const handleCloseListMenu = () =>{
-		setAnchorElList(null);
-	}
+	const handleOpenListMenu = (event) => { setAnchorElList(event.currentTarget); }
+	const handleCloseListMenu = () => { setAnchorElList(null); }
 
 	return (
-		<AppBar position="static" style={{ backgroundColor: "#4F4F4F" }}>
+		<AppBar position="static" color='transparent' sx={{ marginBottom: 2, marginTop: 1 }}>
 			<Container maxWidth="xl">
-				<Toolbar disableGutters>
+				{/* Linha de cima */}
+				<Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
+					{/* Titulo da Pagina */}
+					<Typography
+						component="h2"
+						variant="h5"
+						color="black"
+						align="center"
+						noWrap
+						sx={{ flex: 1 }}>
+						Projeto Listas
+					</Typography>
 
-					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-						<IconButton
-							size="large"
-							aria-label="account of current user"
-							aria-controls="menu-appbar"
-							aria-haspopup="true"
-							onClick={handleOpenNavMenu}
-							color="inherit">
-							<MenuIcon />
-						</IconButton>
-						<Menu
-							id="menu-appbar"
-							anchorEl={anchorElNav}
-							anchorOrigin={{ vertical: 'bottom', horizontal: 'left', }}
-							keepMounted
-							transformOrigin={{ vertical: 'top', horizontal: 'left', }}
-							open={Boolean(anchorElNav)}
-							onClose={handleCloseNavMenu}
-							sx={{ display: { xs: 'block', md: 'none' }, }}>
+					{/* Menu responsivo para dispositivo movel */}
+					<Menu
+						id="menu-appbar"
+						anchorEl={anchorElNav}
+						anchorOrigin={{
+							vertical: 'bottom',
+							horizontal: 'left',
+						}}
+						keepMounted
+						transformOrigin={{
+							vertical: 'top',
+							horizontal: 'left',
+						}}
+						open={Boolean(anchorElNav)}
+						onClose={handleCloseNavMenu}
+						sx={{
+							display: { xs: 'block', md: 'none' }
+						}}>
 
-							{menumobile.map((option, index) => (
-								<MenuItem key={index} onClick={handleCloseUserMenu}>
-									<Link to={option.to} style={{ textDecoration: 'none' }}>
-										<Typography textAlign="center" color="black">{option.name}</Typography>
-									</Link>
-								</MenuItem>))}
-
-							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0, ml: 2 }}>
-								<Typography textAlign="center" color="black">Listas</Typography>
-							</IconButton>
-							{/* <Menu
-								sx={{ mt: '45px' }}
-								id="menu-appbar"
-								anchorEl={anchorElUser}
-								anchorOrigin={{ vertical: 'top', horizontal: 'right',}}
-								keepMounted
-								transformOrigin={{ vertical: 'top', horizontal: 'right',}}
-								open={Boolean(anchorElUser)}
-								onClose={handleCloseUserMenu}>
-								{listas.map((option, index) => (
-									<MenuItem key={index} onClick={handleCloseUserMenu}>
-										<Link to={option.to} style={{ textDecoration: 'none' }}>
-											<Typography textAlign="center">{option.name}</Typography>
-										</Link>
-									</MenuItem>))}
-							</Menu> */}
-						</Menu>
-
-
-
-					</Box>
-
-					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-						{menuItens.map((option, index) => (
-							<Button key={index} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+						{menumobile.map((option, index) => (
+							<MenuItem key={index} onClick={handleCloseUserMenu}>
 								<Link to={option.to} style={{ textDecoration: 'none' }}>
-									<Typography textAlign="center" color="white">{option.name}</Typography>
+									<Typography textAlign="center" color="black">{option.name}</Typography>
 								</Link>
-							</Button>))}
+							</MenuItem>))}
 
-						<IconButton onClick={handleOpenListMenu} sx={{ p: 0 }}>
-							<Typography textAlign="center" color="white">LISTAS</Typography>
+						<IconButton onClick={handleOpenUserMenu} sx={{ p: 0, ml: 2 }}>
+							<Typography textAlign="center" color="black">Listas</Typography>
 						</IconButton>
-						<Menu
-							sx={{ mt: '45px' }}
-							id="menu-appbar"
-							anchorEl={anchorElList}
-							anchorOrigin={{
-								vertical: 'top',
-								horizontal: 'center',
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: 'top',
-								horizontal: 'center',
-							}}
-							open={Boolean(anchorElList)}
-							onClose={handleCloseListMenu}>
-							{listas.map((option, index) => (
-								<MenuItem key={index} onClick={handleCloseListMenu}>
-									<Link to={option.to} style={{ textDecoration: 'none' }}>
-										<Typography textAlign="center">{option.name}</Typography>
-									</Link>
-								</MenuItem>))}
-						</Menu>
-					</Box>
+					</Menu>
 
+					{/* Foto de usuario com menu */}
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Mais informações">
 							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-								<Avatar alt="Remy Sharp" src={ImageUsuario} />
+								<Avatar alt="Remy Sharp" src={images.LogoUser} />
 							</IconButton>
 						</Tooltip>
 						<Menu
@@ -241,7 +185,7 @@ export default function Header() {
 							{settings.map((setting, index) => (
 								<MenuItem key={index} onClick={handleCloseUserMenu}>
 									<a href={setting.href} style={{ textDecoration: 'none' }} target={setting.alvo}>
-										<Typography textAlign="center">{setting.name}
+										<Typography textAlign="center" color="black">{setting.name}
 											<Icon icon={setting.icon} /></Typography>
 									</a>
 								</MenuItem>
@@ -249,9 +193,63 @@ export default function Header() {
 
 						</Menu>
 					</Box>
+				</Toolbar>
+
+				{/* Menu que aparece quando a tela diminui */}
+				<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+					<IconButton
+						size="large"
+						aria-label="account of current user"
+						aria-controls="menu-appbar"
+						aria-haspopup="true"
+						onClick={handleOpenNavMenu}
+						color="inherit">
+						<MenuIcon />
+					</IconButton>
+				</Box>
+
+
+				{/* Menu de itens */}
+				<Toolbar
+					component="nav"
+					variant="dense"
+					sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'space-between' }}>
+
+					{menuItens.map((option, index) => (
+						<Button key={index} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+							<Link to={option.to} style={{ textDecoration: 'none' }}>
+								<Typography textAlign="center" color="black">{option.name}</Typography>
+							</Link>
+						</Button>))}
+
+					<IconButton onClick={handleOpenListMenu} sx={{ p: 0 }}>
+						<Typography textAlign="center" color="black">LISTAS</Typography>
+					</IconButton>
+					<Menu
+						sx={{ mt: '45px' }}
+						id="menu-appbar"
+						anchorEl={anchorElList}
+						anchorOrigin={{
+							vertical: 'top',
+							horizontal: 'center',
+						}}
+						keepMounted
+						transformOrigin={{
+							vertical: 'top',
+							horizontal: 'center',
+						}}
+						open={Boolean(anchorElList)}
+						onClose={handleCloseListMenu}>
+						{listas.map((option, index) => (
+							<MenuItem key={index} onClick={handleCloseListMenu}>
+								<Link to={option.to} style={{ textDecoration: 'none' }}>
+									<Typography textAlign="center">{option.name}</Typography>
+								</Link>
+							</MenuItem>))}
+					</Menu>
 
 				</Toolbar>
 			</Container>
-		</AppBar>
+		</AppBar >
 	);
 }

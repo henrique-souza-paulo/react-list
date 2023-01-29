@@ -8,16 +8,6 @@ import Grid from '@mui/material/Grid'
 import { Card, CardMedia, CardContent } from '@mui/material';
 import { areatextoStyled, margintextoStyled, cardStyled } from './styled'
 
-// importação das imagens
-// import MonaLisa from '../../../src/images/obras/mona-lisa.jpg'
-// import Pieta from '../../../src/images/obras/pieta.jpg'
-// import OGrito from '../../../src/images/obras/o-grito.jpg'
-// import OsGirassois from '../../../src/images/obras/os-girassois.jpg'
-// import Autorretrato from '../../../src/images/obras/autorretrato-com-a-orelha-cortada.jpg'
-// import ANoiteEstrelada from '../../../src/images/obras/a-noite-estrelada.jpg'
-// import ONascimentoDeVenus from '../../../src/images/obras/o-nascimento-de-venus.jpg'
-// import CampoDeTrigoComCorvos from '../../../src/images/obras/campo-de-trigo-com-corvos.jpg'
-
 import images from '../../images/images'
 
 
